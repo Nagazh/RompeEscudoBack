@@ -14,7 +14,12 @@ const eschemausuario = new eschema({
 const ModeloUsuario = mongoose.model('usuarios',eschemausuario)
 module.exports = router
 
-router.post('/agregarusuario',(req,res) =>{
+router.post('/agregarusuario',async(req,res) =>{
+
+    //const datos=req.body;
+    //const nueUsuario = new eschemausuario(datos)
+    //const usuarioCreado =await nueUsuario.save();
+    //res.status(200).json(usuarioCreado)
     const nuevoUsuario = new ModeloUsuario({
         nombre: req.body.nombre,
         email: req.body.email,

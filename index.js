@@ -1,3 +1,4 @@
+const cors = require ('cors');
 const express = require('express')
 const app = express()
 
@@ -6,6 +7,9 @@ const archivoDB = require('./baseDeDatos/conexion')
 
 //Importar rutas y modelo de usuario
 const rutaUsuario = require('../back/rutas/usuario')
+
+//
+app.use(cors());
 
 //Import body parser
 const bodyParser=require('body-parser')
