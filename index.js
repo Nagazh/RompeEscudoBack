@@ -11,7 +11,7 @@ const rutaUsuario = require('../back/rutas/usuario')
 //Middleware
 app.use(cors());
 
-//Import body parser
+//Importar body(cuerpo)
 const bodyParser=require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:'true'}))
