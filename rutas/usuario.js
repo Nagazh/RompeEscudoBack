@@ -14,18 +14,23 @@ module.exports = router
 
 router.post('/agregarusuario',async(req,res) =>{
 
-    //const datos=req.body;
-    //const nueUsuario = new eschemausuario(datos)
-    //const usuarioCreado =await nueUsuario.save();
-    //res.status(200).json(usuarioCreado)
-
     const nuevoUsuario = new ModeloUsuario({
         nombre: req.body.nombre,
         puntaje: req.body.puntaje
     })
     nuevoUsuario.save(function(err){
         if(!err){
-            res.send('Usuario agregado correctamente')
+            res.send('Puntaje agregado correctamente')
+        }
+        else{
+            res.send(err)
+        }
+    })
+})
+router.get('/obtenerPuntaje',(req,res)=>{
+    ModeloUsuario.find({},function(docs,err){
+        if(!err){
+            res.send(docs)
         }
         else{
             res.send(err)
