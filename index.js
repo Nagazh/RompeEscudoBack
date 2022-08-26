@@ -8,7 +8,7 @@ const archivoDB = require('./baseDeDatos/conexion')
 //Importar rutas y modelo de usuario
 const rutaUsuario = require('../back/rutas/usuario')
 
-//
+//Middleware
 app.use(cors());
 
 //Import body parser
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended:'true'}))
 app.use('/api/usuario', rutaUsuario)
 
 app.get('/',(req,res) => {
-    res.end('Hola Slan')
+    res.end('Hola Slan conexion correcta')
 })
 
 //Configurar servidor
